@@ -1,7 +1,13 @@
 name = "FormFactor"
 uuid = "e4b5035b-6f80-41c4-b9c7-57c4172102a9"
 authors = ["Nuzhat"]
-version = "0.1.0"
+version = "1.1.0"
+
+[deps]
+HypergeometricFunctions = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+WignerSymbols = "9f57e263-0b3d-5e2e-b1be-24f2bb48858b"
 
 [compat]
 julia = "1"
