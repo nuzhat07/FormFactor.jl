@@ -30,7 +30,7 @@ function form(n1::Int64,l1::Int64,m1::Int64,a1::Int64,n2::Int64,l2::Int64,m2::In
 		end
 
 
-		X = []
+		X = Float64[]
 		Sum = 0
 
 	    for p in range(abs(l1-l2),l1+l2)
@@ -43,5 +43,5 @@ function form(n1::Int64,l1::Int64,m1::Int64,a1::Int64,n2::Int64,l2::Int64,m2::In
 		end
 		push!(X,Sum)
 		Y = Float64.(Tuple(X))
-        return Y
+        @printf "%.5f" Y[1]
 end
