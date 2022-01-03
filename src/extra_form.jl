@@ -42,6 +42,6 @@ function form(n1::Int64,l1::Int64,m1::Int64,a1::Int64,n2::Int64,l2::Int64,m2::In
 			end
 		end
 		push!(X,Sum)
-		#Y = Float64.(Tuple(X))
-        return X
+		Y = Float64.(Tuple(X))
+        return Y
 end
