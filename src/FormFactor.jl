@@ -5,10 +5,11 @@ using HypergeometricFunctions
 using JuMP
 using SpecialFunctions
 using Printf
+
 # Write your package code here.
 
 include("extra_form.jl")
 
-export form,kron
+export form,kron,fun
 
 end
