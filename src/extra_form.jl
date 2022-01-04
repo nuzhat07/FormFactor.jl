@@ -11,7 +11,7 @@ function fun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l)
 	m = 0 # for this special case m = m1-m2=0.
 	n = n1-l1-1
 	γ = l1+l2+k1+3/2
-	δ = ((a2*n2)+(a1*n1))/(n1*n2*a2*a1)
+	δ = (a2*n2 + a1*n1)/(n1*n2*a2*a1)
 	β = 2/(a1*n1)
 	μ = q
 	α = 2*l1+1
