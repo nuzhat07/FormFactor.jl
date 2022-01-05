@@ -10,38 +10,38 @@ end
 function fun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l)
 	m = 0 # for this special case m = m1-m2=0.
 	n = n1-l1-1
-	γ = l1+l2+k1+3/2
+	γ = l1+l2+k+3/2
 	δ = (a2*n2 + a1*n1)/(n1*n2*a2*a1)
 	β = 2/(a1*n1)
 	μ = q
 	α = 2*l1+1
 	ν = l+1/2
-	aa = (ν+γ+k+1)/2
-	bb = (ν+γ+k+2)/2
+	aa = (ν+γ+k1+1)/2
+	bb = (ν+γ+k1+2)/2
 	cc = 1+ν
 	dd = -(μ^2/δ^2)
-	N1 = 4*pi*(2/(a1^(3/2)*n1^2))*(2/((a2/a1)^(3/2)*n2^2))*√(factorial(big(n1-l1-1))*factorial(big(n2-l2-1))/(factorial(big(n1+l1))*factorial(big(n2+l2))))*(2/(a1*n1))^l1*(2*a1/(a2*n2))^l2*√(pi/(2*q))*kron(m,0)
+	N1 = ((-1)^(m2+m)*2^(2+l1+l2))/((a2/a1)^(3/2+l2)*n1^(2+l1)*n2^(2+l2))*kron(m,0)*√(pi/(2*q))*√((2*l1+1)*(2*l2+1)*factorial(n1+l1)*factorial(n2+l2)*factorial(n1-l1-1))/(factorial(n2-l2-1))
 
-	Il = factorial(big(n2+l2))*(-1)^k1*2^k1/(factorial(big(k1))*factorial(big(n2-l2-1-k1))*factorial(big(2*l2+k1+1))*(a2)^k1*n2^k1)*((-β)^k*μ^ν*gamma(n+α+1)*gamma(ν+γ+k+1)/(factorial(big(k))*factorial(big(n-k))*gamma(α+k+1)*2^ν*gamma(ν+1)*δ^(ν+γ+k+1)))*_₂F₁(aa,bb, cc,dd)
-	Al = (complex(1))^l*√((2*l+1)/(4*pi))*(-1)^(m2+m)*√((2*l1+1)*(2*l2+1)*(2*l+1)/(4*pi))*wigner3j(l1, l2, l, 0, 0, 0)*wigner3j(l1, l2, l, m1, -m2, -m)
+	Il = ((-β)^k1*gamma(ν+γ+k1+1))/(factorial(k1)*factorial(n+1-k1)*gamma(α+k1+1)*δ^(ν+γ+k+1))*_₂F₁(aa,bb, cc,dd)
+	Al = ((complex(1))^l*(-1)^k*2^k*μ^ν*(2*l+1))/(2^ν*gamma(ν+1)*n2^k*(a2/a1)^k*factorial(k)*factorial(2*l2+k+1))*wigner3j(l1, l2, l, 0, 0, 0)*wigner3j(l1, l2, l, m1, -m2, -m)
 	return N1*Il*Al
 end
 
-function form(n1::Int64,l1::Int64,m1::Int64,a1::Int64,n2::Int64,l2::Int64,m2::Int64,a2::Int64,q::Float64)
+function form(n1::Int64,l1::Int64,m1::Int64,a1::Float64,n2::Int64,l2::Int64,m2::Int64,a2::Float64,q::Float64)
 
 
-		X = Float64[]
+		#X = Float64[]
 		Sum = 0
 
 	    for p in range(abs(l1-l2),l1+l2)
-	        for i in range(0,n1-l1-1)
-	            for j in range(0,n2-l2-1)
+	        for i in range(0,n2-l2-1)
+	            for j in range(0,n1-l1-1)
 	                Sum += fun(n1,l1,m1,a1,n2,l2,m2,a2,q,i,j,p)
-					Sum =  convert(AbstractFloat, Sum)
+					Sum =  convert(Float64, Sum)
 				end
 			end
 		end
-		push!(X,Sum)
-		Y = Float64.(Tuple(X))
-        return Y[1] #@printf "%.5f" Y[1] #
+		#push!(X,Sum)
+		#Y = Float64.(Tuple(X))
+        return Sum #@printf "%.5f" Sum #Sum #Y[1] #@printf "%.5f" Y[1] #
 end
