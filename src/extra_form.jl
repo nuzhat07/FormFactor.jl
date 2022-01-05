@@ -27,7 +27,7 @@ function fun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l)
 	return N1*Il*Al
 end
 
-function form(n1::Int64,l1::Int64,m1::Int64,a1::Float64,n2::Int64,l2::Int64,m2::Int64,a2::Float64,q::Float64)
+function form(n1::Int64,l1::Int64,m1::Int64,a1,n2::Int64,l2::Int64,m2::Int64,a2,q::Float64)
 
 
 		#X = Float64[]
