@@ -11,18 +11,17 @@ function fun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l)
 	m = 0 # for this special case m = m1-m2=0.
 	n = n1-l1-1
 	γ = l1+l2+k+3/2
-	δ = (a2*n2 + a1*n1)/(n1*n2*a2)
+	δ = (a2/a1*n2 + n1)/(n1*n2*a2/a1)
 	β = 2/n1
-	μ = q
 	α = 2*l1+1
 	ν = l+1/2
 	aa = (ν+γ+k1+1)/2
 	bb = (ν+γ+k1+2)/2
 	cc = 1+ν
-	dd = -μ^2/δ^2
+	dd = -q^2/δ^2
 	N1 = ((-1)^(m2+m)*2^(2+l1+l2))/((a2/a1)^(3/2+l2)*n1^(2+l1)*n2^(2+l2))*kron(m,0)*√(pi/(2*q))*√(((2*l1+1)*(2*l2+1)*factorial(n1+l1)*factorial(n2+l2)*factorial(n1-l1-1))/factorial(n2-l2-1))
 	Il = ((-β)^k1*gamma(ν+γ+k1+1))/(factorial(k1)*gamma(n-k1+1)*gamma(α+k1+1)*δ^(ν+γ+k1+1))*_₂F₁(aa,bb,cc,dd)
-	Al = (1im)^l*(-2)^k*μ^ν*(2*l+1)/(2^ν*gamma(ν+1)*(n2*a2/a1)^k*factorial(k)*factorial(2*l2+k+1))*wigner3j(l1, l2, l, 0, 0, 0)*wigner3j(l1, l2, l, m1, -m2, -m)
+	Al = (1im)^l*(-2)^k*q^ν*(2*l+1)/(2^ν*gamma(ν+1)*(n2*a2/a1)^k*factorial(k)*factorial(2*l2+k+1))*wigner3j(l1, l2, l, 0, 0, 0)*wigner3j(l1, l2, l, m1, -m2, -m)
 	return N1*Il*Al
 end
 
