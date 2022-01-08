@@ -1,11 +1,3 @@
-kron(x, y) = ==(x, y)
-function kron(x, y, z...)
-	!kron(x, y) && return false
-	for i in z
-		!kron(x, i) && return false
-	end
-	return true
-end
 
 function fun(n1,l1,m1,a1,n2,l2,a2,q,k,k1,l)
 	m = 0 # for this special case m = m1-m2=0.

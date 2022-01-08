@@ -10,6 +10,6 @@ using Printf
 
 include("extra_form.jl")
 
-export form,kron,fun
+export form,fun
 
 end
