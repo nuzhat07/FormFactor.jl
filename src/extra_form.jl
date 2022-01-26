@@ -36,7 +36,7 @@ end
 function form(n1::Int64,l1::Int64,m1::Int64,a1::Float64,n2::Int64,l2::Int64,a2::Float64,q::Float64)
 	if n1>l1>=m1 && n2>l2>=m1
 		Sum = 0
-		for l in abs(l1-l2):l1+l2
+		for l in abs(l1-l2):2:l1+l2
 			for k1 in 0:n2-l2-1
 				for k in 0:n1-l1-1
 					Sum += fun(n1,l1,m1,a1,n2,l2,a2,q,k,k1,l)
