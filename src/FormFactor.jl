@@ -1,15 +1,14 @@
 module FormFactor
 
-using WignerSymbols
-using HypergeometricFunctions
-using JuMP
 using SpecialFunctions
-using Printf
+using HypergeometricFunctions
+using WignerFamilies
+using FLoops
 
-# Write your package code here.
+
 
 include("extra_form.jl")
 
-export form,fun
+export mform,mfun
 
 end
