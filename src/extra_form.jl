@@ -26,7 +26,7 @@ function mform(n1::Int64,l1::Int64,m1::Int64,a1::Float64,n2::Int64,l2::Int64,m2:
                 for k1 in 0:n1-l1-1
                     if (l1+l2) % 2 == 0
                         @reduce Sum += mfun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l, δ, β, α, dd, N1,
-                                            wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2) + 0.0im
+                                            wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2) 
                     else
                         @reduce Sum += im * mfun(n1,l1,m1,a1,n2,l2,m2,a2,q,k,k1,l,  δ, β, α, dd, N1,
                                                  wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2)
