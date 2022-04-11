@@ -4,6 +4,7 @@ authors = ["Nuzhat"]
 version = "1.1.0"
 
 [deps]
+FLoops = "cc61a311-1640-44b5-9fba-1b764f453329"
 HypergeometricFunctions = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
 JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
