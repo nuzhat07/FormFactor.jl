@@ -24,7 +24,7 @@ This is a repository for atomic form factor calculation. The function "form" wil
  
  **Fortran code**
  
- We have used the *crsmumu.f* file from the MuMuPy package https://data.mendeley.com/datasets/nr6y34yg29/1?plain=1 and written a *main.f* file to compare the computation time.
+ We have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` and written a *main.f* file to compare the computation time.
  
  ```fortran
     PROGRAM FORM
