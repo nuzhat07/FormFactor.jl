@@ -66,9 +66,11 @@ This is a repository for atomic form factor calculation. The function "form" wil
 *
  101  FORMAT(' | ',3(I2,' | '),ES11.2E3,'      | ')
       END
-      ```
- 
- To compare with another Fortran code, we have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[2]](#2) and written a *main.f* file to compare the computation time.
+```
+
+
+
+To compare with another Fortran code, we have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[2]](#2) and written a *main.f* file to compare the computation time.
  
  ```fortran
     PROGRAM FORM
