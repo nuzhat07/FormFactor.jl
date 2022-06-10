@@ -23,8 +23,52 @@ This is a repository for atomic form factor calculation. The function "form" wil
  * `julia> mform(1,0,0,1,1,0,0,1,0.66)`
  
  **Fortran code**
+ We have changed the *ffdiff.f* file the package `https://elsevier.digitalcommonsdata.com/datasets/ddy58t53dz/1` and computed the computation time of the form factor from [[1]](#1).
+ ```fortran
+   *
+*
+* *** Test program to calculate electron-hydrogen scattering cross
+* *** sections.
+*
+************************************************************************
+*
+      IMPLICIT NONE
+      INTEGER N, L, M
+      DOUBLE PRECISION DIFOFA
+*
+      WRITE(6,*) '                                      '
+      WRITE(6,*) '** ******************************** **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  This Output File gives us the   **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  absolute value of the result    **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  of subtracting 1. to the form   **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  form factor of a state at the   **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  origin. The expected result is  **'
+      WRITE(6,*) '**                                  **'
+      WRITE(6,*) '**  0.                              **'
+      WRITE(6,*) '** ******************************** **'
+      WRITE(6,*) '                                      '
+      WRITE(6,*) '--------------------------------------'
+      WRITE(6,*) '|  N |  L |  M |  | FFactor(0.66)|   |'
+      WRITE(6,*) '--------------------------------------'
+      DO 1 N=1,30
+            DO 2 L=0,N-1
+              DO 3 M=0,L
+               WRITE(6,101) N,L,M,ABS(DIFOFA(N,L,M,N,L,M,0.66D0))
+          3            CONTINUE
+          2          CONTINUE
+          1       CONTINUE
+      WRITE(6,*) '--------------------------------------'
+*
+ 101  FORMAT(' | ',3(I2,' | '),ES11.2E3,'      | ')
+      END
+      ```
  
- We have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[1]](#1) and written a *main.f* file to compare the computation time.
+ To compare with another Fortran code, we have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[2]](#2) and written a *main.f* file to compare the computation time.
  
  ```fortran
     PROGRAM FORM
@@ -59,6 +103,11 @@ This is a repository for atomic form factor calculation. The function "form" wil
 ```
 ## References
 <a id="1">[1]</a> 
+C. S. Ríos and J. S. Silva, (2003), 
+An implementation of atomic form factors, 
+Computer Physics Communications 151.
+
+<a id="2">[2]</a> 
 A. Uskov, A. Alizzi, and Z. Silagadze (2022), 
 MuMuPy: A dimuonium-matter interaction calculator, 
 Computer Physics Communications 276. 
