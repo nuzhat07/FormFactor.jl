@@ -17,10 +17,10 @@ This is a repository for atomic form factor calculation. The function "form" wil
 
  To install this package one has to do
 
- * In the Julia REPL package mode pkg> add 'github repository link of this package'
- * julia> import FormFactor
- * julia> using FormFactor
- * julia> form(1,0,0,1,1,0,0,1,0.66)
+ * In the Julia REPL package mode `pkg> add https://github.com/nuzhat07/FormFactor.jl.git`
+ * `julia> import FormFactor`
+ * `julia> using FormFactor`
+ * `julia> mform(1,0,0,1,1,0,0,1,0.66)`
  
  **Fortran code**
  
@@ -57,5 +57,9 @@ This is a repository for atomic form factor calculation. The function "form" wil
       END IF
       END PROGRAM FORM
 ```
- 
+## References
+<a id="1">[1]</a> 
+A. Uskov, A. Alizzi, and Z. Silagadze (2022). 
+MuMuPy: A dimuonium-matter interaction calculator. 
+Computer Physics Communications 276. 
  
