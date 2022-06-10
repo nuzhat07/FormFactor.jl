@@ -105,12 +105,12 @@ To compare with another Fortran code, we have used the *crsmumu.f* file from the
 ```
 ## References
 <a id="1">[1]</a> 
-C. S. Ríos and J. S. Silva, (2003), 
+C. S. Ríos and J. S. Silva, 
 An implementation of atomic form factors, 
-Computer Physics Communications 151.
+Computer Physics Communications 151, (2003).
 
 <a id="2">[2]</a> 
-A. Uskov, A. Alizzi, and Z. Silagadze (2022), 
+A. Uskov, A. Alizzi, and Z. Silagadze, 
 MuMuPy: A dimuonium-matter interaction calculator, 
-Computer Physics Communications 276. 
+Computer Physics Communications 276 (2022). 
  
