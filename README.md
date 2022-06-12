@@ -20,7 +20,7 @@ This is a repository for atomic form factor calculation. The function "form" wil
  * In the Julia REPL package mode `pkg> add https://github.com/nuzhat07/FormFactor.jl.git`
  * `julia> import FormFactor`
  * `julia> using FormFactor`
- * `julia> mform(1,0,0,1,1,0,0,1,0.66)`
+ * `julia> mform(1,0,0,1,0,1.0,0.66)`
  
  **Fortran code**
  We have changed the *ffdiff.f* file the package `https://elsevier.digitalcommonsdata.com/datasets/ddy58t53dz/1` and computed the computation time of the form factor from [[1]](#1).
