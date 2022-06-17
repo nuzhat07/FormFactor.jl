@@ -28,8 +28,8 @@ function mform(n1::Int64,l1::Int64,m1::Int64,n2::Int64,l2::Int64,ρ::Float64,q::
                         @reduce Sum += mfun(n1,l1,m1,n2,l2,ρ,q,k,k1,l, δ, β, α, dd, N1,
                                             wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2)
                     else
-                        @reduce Sum += im * mfun(n1,l1,m1,n2,l2,ρ,q,k,k1,l,  δ, β, α, dd, N1,
-                                                 wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2)
+                        @reduce Sum += mfun(n1,l1,m1,n2,l2,ρ,q,k,k1,l,  δ, β, α, dd, N1,
+                                                 wigner3j_l1_l2__0_0, wigner3j_l1_l2__m1_negm2) #without the i factor
                     end
                 end
             end
@@ -51,7 +51,7 @@ function mfun(n1::Int64,l1::Int64,m1::Int64,n2::Int64,l2::Int64,ρ::Float64,q::F
     bb = (ν+γ+k1+2)/2
     cc = 1+ν
 
-    I1 = (gamma(n2+l2+1) * (-2)^k * (-β)^k1 * q^ν * gamma(n+α+1)*gamma(ν+γ+k1+1)
+    I1 = gamma(n2+l2+1) * gamma(n+α+1) * ( (-2)^k * (-β)^k1 * q^ν *gamma(ν+γ+k1+1)
           / (gamma(k+1) * gamma(n2-l2-k) * gamma(2*l2+k+2) * (ρ*n2)^k * gamma(k1+1)
              * gamma(n-k1+1) * gamma(α+k1+1) * 2^ν * gamma(ν+1) * δ^(ν+γ+k1+1)) * _₂F₁(aa,bb,cc,dd))
 
