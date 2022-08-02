@@ -7,10 +7,10 @@
 
 **Introduction**
 
-This is a repository for atomic form factor calculation. The function "form" will calculate the form factor and the input of this function are  
- * n1, l1, m1 are the quantum numbers of the initial particle and n2, l2, m2 are the quantum numbers of the final particle.
- * a1 and a2 are the Bohr radius of the initial and final particle respectively. We are using the length in the units of Bohr radius of initial particle
- * q is the transferred momentum in atomic unit.
+This is a repository for atomic form factor calculation. The function "mform(n1::Int64, l1::Int64, m1::Int64, n2::Int64, l2::Int64, ρ::Float64, q::Float64)" will calculate the form factor and the input of this function are  
+ * n1, l1, m1 are the quantum numbers of the initial particle and n2, l2 are the quantum numbers of the final particle.
+ * ρ is the ratio of Bohr radii of the initial and final particle. We are using the length in the units of Bohr radius of initial particle.
+ * q is the transferred momentum in atomic unit. Atomic units: qatomic units = q/ (μcα), where α is the fine structure constant, μ is the reduced mass of the hydrogen-like atom.
 
 
  **Installation**
@@ -23,9 +23,10 @@ This is a repository for atomic form factor calculation. The function "form" wil
  * `julia> mform(1,0,0,1,0,1.0,0.66)`
  
  **Fortran code**
- We have changed the *ffdiff.f* file the package `https://elsevier.digitalcommonsdata.com/datasets/ddy58t53dz/1` and computed the computation time of the form factor from [[1]](#1).
+ 
+The author of [[1]](#1) implemented a different algorithm in Fortran to calculate atomic form factor. To compare the computation time, we have changed the *ffdiff.f* file of the package `https://elsevier.digitalcommonsdata.com/datasets/ddy58t53dz/1` and computed the computation time. 
  ```fortran
-   *
+*
 *
 * *** Test program to calculate electron-hydrogen scattering cross
 * *** sections.
@@ -70,7 +71,7 @@ This is a repository for atomic form factor calculation. The function "form" wil
 
 
 
-To compare with another Fortran code, we have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[2]](#2) and written a *main.f* file to compare the computation time.
+The author of [[2]](#2) implemented the same algorithm in Fortran for equal masses as we. To compare the computation time with this Fortran code, we have used the *crsmumu.f* file from the MuMuPy package `https://data.mendeley.com/datasets/nr6y34yg29/1` [[2]](#2) and written a *main.f* file.
  
  ```fortran
     PROGRAM FORM
