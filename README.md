@@ -7,7 +7,7 @@
 
 **Introduction**
 
-This is a repository for atomic form factor calculation. The function "mform(n1::Int64,l1::Int64,m1::Int64,n2::Int64,l2::Int64,ρ::Float64,q::Float64)" will calculate the form factor and the input of this function are  
+This is a repository for atomic form factor calculation. The function "mform(n1::Int64, l1::Int64, m1::Int64, n2::Int64, l2::Int64, ρ::Float64, q::Float64)" will calculate the form factor and the input of this function are  
  * n1, l1, m1 are the quantum numbers of the initial particle and n2, l2 are the quantum numbers of the final particle.
  * ρ is the ratio of Bohr radii of the initial and final particle. We are using the length in the units of Bohr radius of initial particle.
  * q is the transferred momentum in atomic unit. Atomic units: qatomic units = q/ (μcα), where α is the fine structure constant, μ is the reduced mass of the hydrogen-like atom.
