@@ -22,7 +22,7 @@ This is a repository for atomic form factor calculation. The function "mform(n1:
  * `julia> import FormFactor`
  * `julia> using FormFactor`
  * `julia> mform(1,0,0,1,0,1.0,0.66)`
- We have added another function in our package which can compute form factor for independent direction of transferred momentum. The mformq function has arguments are \text{mformq}(n_{1},l_{1},m_{1},n_{2},l_{2},m_{2},\rho,q,theta). Theta will define the azimuthal angle between the transferred momentum and quantization axis.
+ We have added another function in our package which can compute form factor for independent direction of transferred momentum. The mformq function has arguments are `mformq(n1,l1,m1,n2,l2,m2,ρ,q,theta)`. Theta will define the azimuthal angle between the transferred momentum and quantization axis.
  **Fortran code**
  
 The author of [[1]](#1) implemented a different algorithm in Fortran to calculate atomic form factor. To compare the computation time, we have changed the *ffdiff.f* file of the package `https://elsevier.digitalcommonsdata.com/datasets/ddy58t53dz/1` and computed the computation time. 
