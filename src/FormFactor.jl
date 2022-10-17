@@ -8,7 +8,8 @@ using FLoops
 
 
 include("extra_form.jl")
+include("independent_q.jl")
 
-export mform,mfun
+export mform,mfun,mfunq,mformq
 
 end

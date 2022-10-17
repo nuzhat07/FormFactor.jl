@@ -4,6 +4,7 @@ authors = ["Nuzhat"]
 version = "1.1.0"
 
 [deps]
+AssociatedLegendrePolynomials = "2119f1ac-fb78-50f5-8cc0-dda848ebdb19"
 FLoops = "cc61a311-1640-44b5-9fba-1b764f453329"
 HypergeometricFunctions = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
 JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
