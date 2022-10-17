@@ -1,4 +1,5 @@
 # FormFactor
+[![CI](https://github.com/nuzhat07/FormFactor.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/nuzhat07/FormFactor.jl/actions/workflows/CI.yml)
 
 [![Build Status](https://travis-ci.com/nuzhat07/FormFactor.jl.svg?branch=main)](https://travis-ci.com/nuzhat07/FormFactor.jl)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/nuzhat07/FormFactor.jl?svg=true)](https://ci.appveyor.com/project/nuzhat07/FormFactor-jl)
